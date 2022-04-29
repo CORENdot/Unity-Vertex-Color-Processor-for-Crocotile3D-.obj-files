@@ -17,7 +17,8 @@ Meshes.
     1 - Avoid equally named Objects in the Crocotile3D Hierarchy. Including casing variations!
         - Only Object names matter, Layers and Instances can be repeated.
         - If for some reason you need to have Objects named equally put them next to each other
-            in the hierarchy and see if it works.
+            in the hierarchy and see if it works. Remember that Unity Importer merges
+            all Objects called equally together into a single Mesh!
         - This would require the vertex data read algorithm to jump across the .obj file searching
             for each object that has the same name instead of reading sequentially. Can be done 
             but it's out of my scope for now, i'm also not sure the performance tradeoff is worth.
@@ -25,7 +26,7 @@ Meshes.
     2 - If you have any Object called "Scene" or it's possible case variations place it at top
         of the hierarchy.
             - Bear in mind it will get merged together with all other non-object-tiles of your
-            Crocotile3D project.
+            Crocotile3D project into a single Mesh as "Scene" it's the default existing Object!
                 
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds"
         it might be cause your Crocotile3D project has intersecting vertices.
