@@ -9,7 +9,7 @@ below in the Why is this useful section.
 # How it works
 
 Place the script somewhere inside your Asset folder of your Unity project and next time
-you import or modify an .obj it will load the Vertex Colors automatically into the resulting 
+you import or modify an .obj file it will load the Vertex Colors automatically into the resulting 
 Meshes.
 
 # Considerations and limitations:
