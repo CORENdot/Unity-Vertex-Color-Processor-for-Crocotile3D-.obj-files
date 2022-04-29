@@ -30,8 +30,8 @@ Meshes.
                 
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds"
         it might be cause your Crocotile3D project has intersecting vertices.
-            - This means a vertex ends intersecting a triangle. (Not connected with anoter vertex)
-            - Either find the vertex and connect it to another or change the exporting settings 
+            - This means a tile vertex ends intersecting another tile triangle.
+            - Either find the culprit vertex and "fix it" or change the exporting settings 
                 of the .obj file with Merge Vertices checkbox disabled in Crocotile3D.
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
@@ -64,14 +64,16 @@ Meshes.
 
 It is not possible for Unity to load Vertex Colors from .obj files created with Crocotile3D by default, they only load correctly from .dae files.
 
-This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported. Which in complex Crocotile3D projects might end being very time consuming.
+This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported. 
+
+Which in big Crocotile3D projects might be very time consuming.
 
 With this script you will have some quality of life improvements by using .obj files: 
 
 - Vertex Colors correctly loaded.
 - Each Object as an individual Mesh or all merged together at will (based on Use Groups checkbox of .obj export settings in Crocotile3D)
 - Meshes having "filename_Scene" naming for better inspector searching.
-- Matching Vertex Colors with Crocotile3D in Gamma color space.
+- Matching Vertex Colors from Crocotile3D to Unity in Gamma color space.
 
 # Last tested with
 
