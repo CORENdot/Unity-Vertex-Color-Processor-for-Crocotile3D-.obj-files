@@ -8,7 +8,8 @@ using UnityEditor;
 using UnityEngine;
 
 /*
-    C3DOBJProcessor script loads Vertex Colors from .obj files created with Crocotile3D.
+    C3DOBJProcessor script loads Vertex Colors from .obj files created with Crocotile3D
+    when they are imported or modified within the Unity Editor.
 
     Read all Considerations and Limitations carefully from GitHub readme if you get a case
     where it doesn't work properly:
@@ -50,8 +51,37 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
 
         Transform root = gameObject.transform;
 
-        // - MESH FILTERS ORDER ALGORITHM HERE -
-        List<MeshFilter> meshFilters = root.GetComponentsInChildren<MeshFilter> (true).ToList<MeshFilter> ();
+        List<string> ids = new List<string> ();
+
+        /*
+            Find the order at which Objects Vertex Data is written in the .obj file.
+            .obj file "g" lines seem to hold the accurate order.
+        */
+        for (int i = 0; i < lines.Length; i++)
+        {
+            string[] tokens = lines [i].Split (' ');
+            if (tokens [0].Equals ("g"))
+            {
+                ids.Add (tokens [1]);
+            }
+        }
+
+        // Remove id duplicates.
+        ids = ids.Distinct (StringComparer.CurrentCultureIgnoreCase).ToList ();
+
+        // - MESH FILTERS ORDER ALGORITHM -
+        List<MeshFilter> meshFilters = new List<MeshFilter> ();
+        foreach (string id in ids)
+        {
+            foreach (Transform child in root)
+            {
+                if (child.name.Equals (id, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    meshFilters.Add (child.GetComponent<MeshFilter> ());
+                }
+            }
+        }
+
         MeshFilter scene = meshFilters.Find (m => m.name.Equals ("Scene"));
         if (scene)
         {
