@@ -79,5 +79,5 @@ With this script you will have some quality of life improvements by using .obj f
 
 # Ending
 
-This is my gift for the Crocotile3D community, you can catch me on the official Crocotile3D discord. Thank Alex from my part for the incredible Crocotile3D software that is.
+This is my gift for the Crocotile3D community, you can catch me on the official Crocotile3D discord. Thank Alex from my part for the incredible piece of software that Crocotile3D is.
 - CORENdot
