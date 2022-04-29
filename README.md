@@ -3,9 +3,8 @@
 Original intention is to extend Unity importer to support Vertex Colors
 from .obj files created with Crocotile3D perfectly.
 
-It also changes "Scene" naming (non-object-tiles default group of Crocotile3D)
-to filename_Scene, otherwise as the Unity Project grows it becomes impossible to 
-search for individual Meshes if they are all called "Scene".
+It also adds other quality of life improvements that you can find described
+below in the Why is this useful section.
 
 # How it works
 
