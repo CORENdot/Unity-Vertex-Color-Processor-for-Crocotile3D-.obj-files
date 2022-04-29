@@ -74,9 +74,13 @@ Meshes.
 
 # Why this is useful
 
-If you need every Object created within the same Crocotile3D .obj file (Use Groups export checkbox enabled)
-to end as an individual Mesh + Vertex Colored within Unity. If you don't use this script you will have to
-individually export each Object as .dae. Which is... pain.
+It is not possible for Unity to load Vertex Colors from .obj created with Crocotile3D by default, they only load correctly from .dae.
 
-This is my gift for the Crocotile3D community, you can catch me on the official Crocotile3D discord.
+This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Meshes end merged together.
+
+With you will have the best of both worlds by using .obj files: Vertex Colors, Objects as individual Meshes, Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
+
+# Ending
+
+This is my gift for the Crocotile3D community, you can catch me on the official Crocotile3D discord. Thank Alex from my part for the incredible Crocotile3D software that is.
 - CORENdot
