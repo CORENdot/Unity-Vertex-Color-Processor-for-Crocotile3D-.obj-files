@@ -7,8 +7,6 @@ It also changes "Scene" naming (non-object-tiles default group of Crocotile3D)
 to filename_Scene, otherwise as the Unity Project grows it becomes impossible to 
 search for individual Meshes if they are all called "Scene".
 
-Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
-
 # How it works
 
 Place the script somewhere inside your Asset folder of your Unity project and next time
@@ -83,6 +81,11 @@ It is not possible for Unity to load Vertex Colors from .obj created with Crocot
 This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported. Which in complex Crocotile3D projects might end being very time consuming.
 
 With this script you will have the best of both worlds by using .obj files: Vertex Colors, each Object as an individual Mesh or all merged together at will (based on Use Groups checkbox of .obj export settings enabled or not), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
+
+# Last tested with
+
+Unity 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
+.obj files created with Crocotile3D 1.8.5
 
 # Ending
 
