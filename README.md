@@ -7,8 +7,7 @@ It also changes "Scene" naming (non-object-tiles default group of Crocotile3D)
 to filename_Scene, otherwise as the Unity Project grows it becomes impossible to 
 search for individual Meshes if they are all called "Scene".
 
-Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecated
-values.
+Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
 
 # How it works
 
