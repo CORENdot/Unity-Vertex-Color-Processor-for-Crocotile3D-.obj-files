@@ -4,7 +4,7 @@ Original intention is to extend Unity importer to support Vertex Colors
 from .obj files created with Crocotile3D perfectly.
 
 It also adds other quality of life improvements that you can find described
-below in the Why is this useful section.
+below in the Why this is useful section.
 
 # How it works
 
