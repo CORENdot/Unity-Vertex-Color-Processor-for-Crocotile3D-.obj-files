@@ -49,7 +49,12 @@ using UnityEngine;
                 the order where the vertex data ends if an Object is called "Scene"
                 gets hard to be determined in many cases. Avoid it.
 
-    3 - This script cannot distinguish .obj files created with Crocotile3D than other
+    3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds"
+        it might be cause your Crocotile3D project has intersecting vertices.
+            - Try exporting the .obj file with Merge Vertices checkbox disabled in Crocotile3D
+            export settings.
+
+    4 - This script cannot distinguish .obj files created with Crocotile3D than other
         modeling softwares. If you have .obj files created from other
         modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
@@ -57,22 +62,22 @@ using UnityEngine;
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
             for that "c3d" in code.
 
-    4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
+    5 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - Gamma is the default Color Space on new projects by Unity.
             - There might be a workaround in ModelImporter functions to avoid this, check documentation.
             - Other solution might involve to change how the Colors are parsed in this script. 
 
-    5 - It requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings set to false
+    6 - It requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings set to false
         so Unity doesn't mismatch with the .obj file vertex order. 
         (This script does this automatically for you on the OnPreprocessModel () function)
 
-    6 - Performance on multiple .obj importing or modifications has not been extensively tested.
+    7 - Performance on multiple .obj importing or modifications has not been extensively tested.
 
-    7 - USE THIS AT YOUR OWN RISK! Backup your .obj files if you have no way of reimport them before
+    8 - USE THIS AT YOUR OWN RISK! Backup your .obj files if you have no way of reimport them before
         adding this script to your Unity project!
 
-    8 - Feel free to use this script however you want, yet remember that the original intention was
+    9 - Feel free to use this script however you want, yet remember that the original intention was
         to help Unity and Crocotile3D users for FREE.
 
     This is my gift for the Crocotile3D community, you can catch me on the official discord.
@@ -81,6 +86,7 @@ using UnityEngine;
 public sealed class C3DOBJProcessor : AssetPostprocessor
 {
 
+    private ModelImporter _modelImporter;
     private string _fileName;
     private string _extension;
     private string _fileFullPath;
@@ -93,10 +99,10 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
 
         if (!File.Exists (_fileFullPath) || !_extension.Equals (".obj")) return;
 
-        ModelImporter modelImporter = (ModelImporter) assetImporter;
-        modelImporter.preserveHierarchy = false;
-        modelImporter.optimizeMesh = false;
-        modelImporter.weldVertices = false;
+        _modelImporter = (ModelImporter) assetImporter;
+        _modelImporter.preserveHierarchy = false;
+        _modelImporter.optimizeMesh = false;
+        _modelImporter.weldVertices = false;
         /* 
             You can add extra modelImporter settings here. 
             Bear in mind Preserve Hierarchy, Optimize Mesh, and Weld Vertices
