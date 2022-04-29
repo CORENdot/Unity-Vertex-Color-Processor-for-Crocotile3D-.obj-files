@@ -76,7 +76,8 @@ Meshes.
 
 It is not possible for Unity to load Vertex Colors from .obj created with Crocotile3D by default, they only load correctly from .dae.
 
-This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Meshes end merged together.
+This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together unless individually exported. Which
+in complex Crocotile3D projects might end being very time consuming.
 
 With this script you will have the best of both worlds by using .obj files: Vertex Colors, Objects as individual Meshes (if Use Groups checkbox is enabled), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
 
