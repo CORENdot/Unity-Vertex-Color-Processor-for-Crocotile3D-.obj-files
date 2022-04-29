@@ -61,7 +61,7 @@ Meshes.
     5 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - Gamma is the default Color Space on new projects by Unity.
-            - There might be a workaround in ModelImporter functions to avoid this, check documentation.
+            - There might be a workaround in ModelImporter settings for Linear space users, check documentation.
             - Other solution might involve to change how the Colors are parsed in this script. 
             
     6 - It requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings set to false
@@ -69,15 +69,19 @@ Meshes.
         (This script does this automatically for you on the OnPreprocessModel () function)
         
     7 - Performance on multiple .obj importing or modifications has not been extensively tested.
+    
+    8 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
+        unable to recover, for whatever reason, before adding the script into your Unity project.
+
+    9 - Enjoy!
 
 # Why this is useful
 
 It is not possible for Unity to load Vertex Colors from .obj created with Crocotile3D by default, they only load correctly from .dae.
 
-This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together unless individually exported. Which
-in complex Crocotile3D projects might end being very time consuming.
+This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported. Which in complex Crocotile3D projects might end being very time consuming.
 
-With this script you will have the best of both worlds by using .obj files: Vertex Colors, Objects as individual Meshes (if Use Groups checkbox is enabled), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
+With this script you will have the best of both worlds by using .obj files: Vertex Colors, each Object as an individual Mesh or all merged together at will (based on Use Groups checkbox of .obj export settings enabled or not), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
 
 # Ending
 
