@@ -13,8 +13,8 @@ values.
 # How it works
 
 Place the script somewhere inside your Asset folder of your Unity project and next time
-you import or modify an .obj within Unity Editor it will load the Vertex Colors
-automatically into the resulting Meshes if it's an .obj file created with Crocotile3D.
+you import or modify an .obj it will load the Vertex Colors automatically into the resulting 
+Meshes.
 
 # Considerations and limitations:
 
