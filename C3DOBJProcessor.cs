@@ -49,27 +49,25 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
 
         string[] lines = File.ReadAllLines (_fileFullPath);
 
-        Transform root = gameObject.transform;
-
-        List<string> ids = new List<string> ();
-
         /*
             Find the order at which Objects Vertex Data is written in the .obj file.
             .obj file "g" lines seem to hold the accurate order.
         */
+        List<string> ids = new List<string> ();
         for (int i = 0; i < lines.Length; i++)
         {
             string[] tokens = lines [i].Split (' ');
             if (tokens [0].Equals ("g"))
             {
                 ids.Add (tokens [1]);
-            }
+            }   
         }
 
         // Remove id duplicates.
         ids = ids.Distinct (StringComparer.CurrentCultureIgnoreCase).ToList ();
 
         // - MESH FILTERS ORDER ALGORITHM -
+        Transform root = gameObject.transform;
         List<MeshFilter> meshFilters = new List<MeshFilter> ();
         foreach (string id in ids)
         {
