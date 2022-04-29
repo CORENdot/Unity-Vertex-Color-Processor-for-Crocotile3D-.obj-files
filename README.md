@@ -84,8 +84,8 @@ With this script you will have the best of both worlds by using .obj files: Vert
 
 # Last tested with
 
-Unity 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
-.obj files created with Crocotile3D 1.8.5
+- Unity 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
+- .obj files created with Crocotile3D 1.8.5
 
 # Ending
 
