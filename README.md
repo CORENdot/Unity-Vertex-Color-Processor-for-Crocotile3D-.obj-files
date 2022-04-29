@@ -69,4 +69,4 @@ Considerations and limitations:
     8 - Feel free to use this script however you want, yet remember that the original intention was
         to help Unity and Crocotile3D users for FREE.
 
-This is my gift for the Crocotile3D community, can catch me on the official discord too as CORENdot.
+This is my gift for the Crocotile3D community, you can catch me on the official discord too as CORENdot.
