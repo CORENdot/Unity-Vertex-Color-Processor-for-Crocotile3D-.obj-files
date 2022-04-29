@@ -15,9 +15,9 @@ Meshes.
 
 # Considerations and limitations:
 
-    1 - Do not have equally named Objects in the Crocotile3D Hierarchy. Including casing variations!
+    1 - Avoid equally named Objects in the Crocotile3D Hierarchy. Including casing variations!
         - Only Object names matter, Layers and Instances can be repeated.
-        - If for some reason you need to have two objects named equally put them next to each other
+        - If for some reason you need to have Objects named equally put them next to each other
             in the hierarchy and see if it works.
         - This would require the vertex data read algorithm to jump across the .obj file searching
             for each object that has the same name instead of reading sequentially. Can be done 
@@ -30,8 +30,9 @@ Meshes.
                 
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds"
         it might be cause your Crocotile3D project has intersecting vertices.
-            - Try exporting the .obj file with Merge Vertices checkbox disabled in Crocotile3D
-            export settings.
+            - This means a vertex ends intersecting a triangle. (Not connected with anoter vertex)
+            - Either find the vertex and connect it to another or change the exporting settings 
+                of the .obj file with Merge Vertices checkbox disabled in Crocotile3D.
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
@@ -61,11 +62,16 @@ Meshes.
 
 # Why this is useful
 
-It is not possible for Unity to load Vertex Colors from .obj created with Crocotile3D by default, they only load correctly from .dae.
+It is not possible for Unity to load Vertex Colors from .obj files created with Crocotile3D by default, they only load correctly from .dae files.
 
 This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported. Which in complex Crocotile3D projects might end being very time consuming.
 
-With this script you will have the best of both worlds by using .obj files: Vertex Colors, each Object as an individual Mesh or all merged together at will (based on Use Groups checkbox of .obj export settings enabled or not), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
+With this script you will have some quality of life improvements by using .obj files: 
+
+- Vertex Colors correctly loaded.
+- Each Object as an individual Mesh or all merged together at will (based on Use Groups checkbox of .obj export settings in Crocotile3D)
+- Meshes having "filename_Scene" naming for better inspector searching.
+- Matching Vertex Colors with Crocotile3D in Gamma color space.
 
 # Last tested with
 
