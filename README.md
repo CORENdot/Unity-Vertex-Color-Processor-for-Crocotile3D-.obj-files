@@ -15,57 +15,42 @@ Meshes.
 
 # Considerations and limitations:
 
-    1 - Crocotile3D Object hierarchy needs to be alphanumerically ordered by YOU!
-            - Only Objects, Instances' order don't matter.
-            - Order them descendingly.
-            - Pair equally named Objects together in the hierarchy, yet acknowledge
-                that they will get merged into a single Mesh by Unity.
-            - Layer names don't matter but the overall Object hierarchy still
-            needs to be ordered.
-            - Crocotile3D Hierarchy Examples:
-                - Example of CORRECT Crocotile3D hierarchy:
-                    - Superlayer Z
-                        - Object A
-                        - Object A
-                        - Object B
-                    - Object C
-                - Example of INCORRECT Crocotile3D hierarchy:
-                    - Superlayer Z
-                        - Object A
-                        - Object A
-                        - Object C
-                    - Object B
-            - I have found no way to workaround this limitation, it probably needs
-                a whole ModelImporter created from scratch which is out of my scope.
-                
-    2 - Don't call any Crocotile3D Object exactly "Scene", including case variations.
-            - "Scene" is the default group (non-object-tiles group) of Crocotile3D
-                the order where the vertex data ends if an Object is called "Scene"
-                gets hard to be determined in many cases. Avoid it.
+    1 - Do not have equally named Objects in the Crocotile3D Hierarchy. Including casing variations!
+        - Only Object names matter, Layers and Instances can be repeated.
+        - If for some reason you need to have two objects named equally put them next to each other
+            in the hierarchy and see if it works.
+        - This would require the vertex data read algorithm to jump across the .obj file searching
+            for each object that has the same name instead of reading sequentially. Can be done 
+            but it's out of my scope for now, i'm also not sure the performance tradeoff is worth.
+
+    2 - If you have any Object called "Scene" or it's possible case variations place it at top
+        of the hierarchy.
+            - Bear in mind it will get merged together with all other non-object-tiles of your
+            Crocotile3D project.
                 
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds"
         it might be cause your Crocotile3D project has intersecting vertices.
             - Try exporting the .obj file with Merge Vertices checkbox disabled in Crocotile3D
             export settings.
             
-    4 - This script cannot distinguish .obj files created with Crocotile3D than other
-        modeling softwares. If you have .obj files created from other
-        modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
-            - Feel free to extend the code and add conditions that will prevent the script to 
-            affect each .obj files of your project. 
-            - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
-            for that "c3d" in code.
-            
-    5 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
+    4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - Gamma is the default Color Space on new projects by Unity.
             - There might be a workaround in ModelImporter settings for Linear space users, 
                 check documentation.
             - Other solution might involve to change how the Colors are parsed in this script. 
             
-    6 - It requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings set to false
-        so Unity doesn't mismatch with the .obj file vertex order. 
+    5 - The script requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings
+        set to false so Unity doesn't mismatch with the .obj file vertex order. 
         (This script does this automatically for you on the OnPreprocessModel () function)
+        
+    6 - This script cannot distinguish .obj files created with Crocotile3D than other
+        modeling softwares. If you have .obj files created from other
+        modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
+            - Feel free to extend the code and add conditions that will prevent the script to 
+            affect each .obj files of your project. 
+            - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
+            for that "c3d" in code.        
         
     7 - Performance on multiple .obj importing or modifications has not been extensively tested.
     
