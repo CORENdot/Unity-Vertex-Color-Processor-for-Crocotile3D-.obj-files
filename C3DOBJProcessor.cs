@@ -64,7 +64,7 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
         }
 
         // Remove id duplicates.
-        ids = ids.Distinct (StringComparer.CurrentCultureIgnoreCase).ToList ();
+        ids = ids.Distinct (StringComparer.InvariantCultureIgnoreCase).ToList ();
 
         // - MESH FILTERS ORDER ALGORITHM -
         Transform root = gameObject.transform;
@@ -73,7 +73,7 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
         {
             foreach (Transform child in root)
             {
-                if (child.name.Equals (id, StringComparison.InvariantCultureIgnoreCase))
+                if (child.name.Equals (id))
                 {
                     meshFilters.Add (child.GetComponent<MeshFilter> ());
                 }
