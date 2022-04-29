@@ -78,7 +78,7 @@ It is not possible for Unity to load Vertex Colors from .obj created with Crocot
 
 This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Meshes end merged together.
 
-With you will have the best of both worlds by using .obj files: Vertex Colors, Objects as individual Meshes, Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
+With this script you will have the best of both worlds by using .obj files: Vertex Colors, Objects as individual Meshes (if Use Groups checkbox is enabled), Meshes having "filename_Scene" naming for better inspector searching and who knows what might come next.
 
 # Ending
 
