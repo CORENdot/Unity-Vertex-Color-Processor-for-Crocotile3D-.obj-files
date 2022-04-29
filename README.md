@@ -1,9 +1,6 @@
 # Unity Vertex Color Processor for Crocotile3D .obj files
 
-C3DOBJProcessor script works after .obj models are imported 
-or modified within the Unity Editor.
-
-Intention is to extend Unity importer to support Vertex Colors
+Original intention is to extend Unity importer to support Vertex Colors
 from .obj files created with Crocotile3D perfectly.
 
 It also changes "Scene" naming (non-object-tiles default group of Crocotile3D)
@@ -13,7 +10,13 @@ search for individual Meshes if they are all called "Scene".
 Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecated
 values.
 
-Considerations and limitations:
+# How it works
+
+Place the script somewhere inside your Asset folder of your Unity project and next time
+you import or modify an .obj within Unity Editor it will load the Vertex Colors
+automatically into the resulting Meshes if it's an .obj file created with Crocotile3D.
+
+# Considerations and limitations:
 
     1 - Crocotile3D Object hierarchy needs to be alphanumerically ordered by YOU!
             - Only Objects, Instances' order don't matter.
