@@ -120,8 +120,6 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
             // If "Scene" Object exists place it first to read the vertex data.
             meshFilters.Remove (scene);
             meshFilters.Insert (0, scene);
-            // - GAME OBJECT "SCENE" NAME CHANGE -  
-            meshFilters [0].name = gameObject.name + "_Scene";
         }
 
         // Search the .obj file for first "v" line position to start reading there.
@@ -161,6 +159,7 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
                 {
                     Debug.Log ("C3DOBJProcessor error = " + error.StackTrace);
                     errorFound = true;
+                    break;
                 }
                 currFileLine++;
             }
