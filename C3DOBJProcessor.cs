@@ -1,4 +1,5 @@
-﻿using System;
+#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -10,15 +11,14 @@ using UnityEngine;
     C3DOBJProcessor script works after .obj models are imported 
     or modified within the Unity Editor.
 
-    Intention is to extend Unity importer to support Vertex Colors
-    from .obj files created with Crocotile3D perfectly.
+    Intention is to extend Unity default model importer to support 
+    Vertex Colors from .obj files created with Crocotile3D perfectly.
 
     It also changes "Scene" naming (non-object-tiles default group of Crocotile3D)
     to filename_Scene, otherwise as the Unity Project grows it becomes impossible to 
     search for individual Meshes if they are all called "Scene".
 
-    Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecated
-    values.
+    Tested on 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
 
     CONSIDERATIONS AND LIMITATIONS:
     1 - Crocotile3D Object hierarchy needs to be alphanumerically ordered by YOU!
@@ -112,7 +112,7 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
 
         Transform root = gameObject.transform;
 
-        // - MESHFILTERS ORDER ALGORITHM HERE -
+        // - MESH FILTERS ORDER ALGORITHM HERE -
         List<MeshFilter> meshFilters = root.GetComponentsInChildren<MeshFilter> (true).ToList<MeshFilter> ();
         MeshFilter scene = meshFilters.Find (m => m.name.Equals ("Scene"));
         if (scene)
@@ -120,6 +120,8 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
             // If "Scene" Object exists place it first to read the vertex data.
             meshFilters.Remove (scene);
             meshFilters.Insert (0, scene);
+            // - GAME OBJECT "SCENE" NAME CHANGE -  
+            meshFilters [0].name = gameObject.name + "_Scene";
         }
 
         // Search the .obj file for first "v" line position to start reading there.
@@ -170,3 +172,4 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
     }
 
 }
+#endif
