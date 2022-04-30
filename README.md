@@ -69,10 +69,10 @@ Which in big Crocotile3D projects might become very time consuming.
 With this script you will have some quality of life improvements by using .obj files: 
 
 - Vertex Colors correctly loaded from the .obj file into Unity resulting Mesh/es.
-- Each Object as an individual Mesh or all merged together at will based on:
+- Each Object as an individual Mesh or merged together at will based on:
     - Use Groups checkbox of .obj export settings in Crocotile3D enabled or disabled
     - Multiple Objects named equally in the Object Hierarchy of Crocotile3D (Scene tab)
-- Meshes having "filename_Scene" naming for better inspector searching.
+- Meshes having "filename_Scene" naming for better inspector searching within Unity Editor.
 - Matching Vertex Colors from Crocotile3D to Unity in Gamma color space.
 
 # Last tested with
