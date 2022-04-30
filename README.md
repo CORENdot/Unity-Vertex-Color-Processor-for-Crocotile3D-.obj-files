@@ -31,9 +31,8 @@ Mesh/es.
     3 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - Gamma is the default Color Space on new projects by Unity.
-            - There might be a workaround in ModelImporter settings for Linear space users, 
-                check documentation.
-            - Other solution might involve to change how the Colors are parsed in this script. 
+            - If you are a Linear Space user you will have to find why the result is different,
+            maybe a gamma correction is needed after parsing the Vertex Colors in the script.
             
     4 - The script requires PreserveHierarchy, OptimizeMesh, WeldVertices and CalculateNormals
         set to false in the Unity .obj ModelImporter settings to not mismatch the vertex data order. 
