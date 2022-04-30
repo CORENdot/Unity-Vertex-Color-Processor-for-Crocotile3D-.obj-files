@@ -41,9 +41,8 @@ Mesh/es.
             - Don't worry about losing Normals or Tangets they get re-calculated after the Vertex 
                 Colors are correctly loaded automatically.
  
-    5 - The script cannot distinguish .obj files created with Crocotile3D than other
-        modeling softwares. If you have .obj files created from other
-        modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
+    5 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
+            - Imported or modified .obj files created from other modeling softwares MIGHT MAKE THE SCRIPT FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
             affect each .obj files of your project. 
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
