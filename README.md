@@ -21,11 +21,11 @@ Mesh/es.
             in the hierarchy to make it work.
             -   Yet bear in mind that Unity Importer merges Objects called equally into a single Mesh!
 
-    2 - If you have created Object/s called "Scene" or it's possible case variations place them at top
+    2 - If you have created Object/s called "Scene" or it's possible casing variations place them at top
         of the Object Hierarchy in Crocotile3D (Scene tab).
             - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's
             applied to all non-grouped-tiles by default. 
-            - Again if you create more Objects called "Scene" they will get merged with the 
+            - Again if you create Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
             
     3 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
@@ -36,11 +36,11 @@ Mesh/es.
             - Other solution might involve to change how the Colors are parsed in this script. 
             
     4 - The script requires PreserveHierarchy, OptimizeMesh, WeldVertices and CalculateNormals
-        set to false in the ModelImporter settings so Unity doesn't mismatch with the vertex order. 
+        set to false in the Unity .obj ModelImporter settings to not mismatch the vertex data order. 
             - This script does this automatically for you on the OnPreprocessModel () function.
-            - Don't worry about loosing Normals or Tangets they get calculated after the Vertex Colors
-                are correctly loaded.
-        
+            - Don't worry about losing Normals or Tangets they get re-calculated after the Vertex 
+                Colors are correctly loaded automatically.
+ 
     5 - The script cannot distinguish .obj files created with Crocotile3D than other
         modeling softwares. If you have .obj files created from other
         modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
