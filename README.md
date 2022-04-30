@@ -28,8 +28,8 @@ Mesh/es.
             - Again if you create more Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
 
-    3 - I have found some cases where Merge Vertices .obj export checkbox option in Crocotile3D export
-        settings conflicts the quantity of vertices that Unity imports into the resulting mesh/es. 
+    3 - I have found some cases where Merge Vertices .obj setting in Crocotile3D export conflicts 
+        the quantity of vertices that Unity imports into the resulting mesh/es. 
             - If you get a "Mesh.colors is out of bounds..." error disable that checkbox and see if it works.
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
