@@ -34,25 +34,19 @@ Mesh/es.
             - If you are a Linear Space user you will have to find why the result is different,
             maybe a gamma correction is needed after parsing the Vertex Colors in the script.
             
-    4 - The script requires PreserveHierarchy, OptimizeMesh, WeldVertices and CalculateNormals
-        set to false in the Unity .obj ModelImporter settings to not mismatch the vertex data order. 
-            - This script does this automatically for you on the OnPreprocessModel () function.
-            - Don't worry about losing Normals or Tangets they get re-calculated after the Vertex 
-                Colors are correctly loaded automatically.
- 
-    5 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
+    4 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
             - Imported or modified .obj files created on other modeling softwares CAN MAKE THE SCRIPT FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
             affect each .obj files of your project. 
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
             for that "c3d" in code.        
         
-    6 - Performance on multiple .obj importing or modifications has not been extensively tested.
+    5 - Performance on multiple .obj importing or modifications has not been extensively tested.
     
-    7 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
+    6 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
         unable to recover, for whatever reason, before adding the script into your Unity project.
 
-    8 - Enjoy!
+    7 - Enjoy!
 
 # Why this is useful
 
