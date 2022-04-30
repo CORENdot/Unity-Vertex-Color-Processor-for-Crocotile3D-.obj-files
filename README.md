@@ -29,7 +29,7 @@ Mesh/es.
             non-grouped-tiles into a single Mesh by Unity.
             
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds..." try
-        exporting the .obj file with Merge Vertices disabled in the Crocotile3D .obj export settings and 
+        exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
         see if it works.
             - These are cases i have yet to find out if i can do anything about them to make it work.
             - Another thing you can do is to export enabling Object by Object to see which one is
