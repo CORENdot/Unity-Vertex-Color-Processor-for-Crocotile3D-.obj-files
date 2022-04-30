@@ -23,8 +23,8 @@ Mesh/es.
 
     2 - If you have created Object/s called "Scene" or it's possible case variations place them at top
         of the Object Hierarchy in Crocotile3D (Scene tab).
-            - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's applied
-            to all non-grouped-tiles by default. 
+            - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's
+            applied to all non-grouped-tiles by default. 
             - Again if you create more Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
 
