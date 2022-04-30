@@ -35,9 +35,11 @@ Mesh/es.
                 check documentation.
             - Other solution might involve to change how the Colors are parsed in this script. 
             
-    4 - The script requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings
-        set to false so Unity doesn't mismatch with the .obj file vertex order. 
+    4 - The script requires PreserveHierarchy, OptimizeMesh, WeldVertices and CalculateNormals
+        set to false in the ModelImporter settings so Unity doesn't mismatch with the vertex order. 
             - This script does this automatically for you on the OnPreprocessModel () function.
+            - Don't worry about loosing Normals or Tangets they get calculated after the Vertex Colors
+                are correctly loaded.
         
     5 - The script cannot distinguish .obj files created with Crocotile3D than other
         modeling softwares. If you have .obj files created from other
