@@ -16,7 +16,7 @@ Mesh/es.
 
     1 - Avoid creating equally named Objects in the Crocotile3D Object Hierarchy (Scene tab). 
         - Including casing variations! (Example, EXAMPLE, eXaMpLe, etc...)
-        - Only Object names matter, Layers and Instances can be repeated.
+        - Only Object names matter, Instances and Layers names can be repeated.
         - If for some reason you need to have Objects named equally put them next to each other
             in the hierarchy to make it work.
             -   Yet bear in mind that Unity Importer merges Objects called equally into a single Mesh!
