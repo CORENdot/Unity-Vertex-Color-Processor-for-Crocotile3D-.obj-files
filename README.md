@@ -31,9 +31,7 @@ Mesh/es.
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds..." try
         exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
         see if it works.
-            - I have found one case where it was needed due to overlapping faces. (Z-Fighting)
-            - Another thing you can do is to export enabling Object by Object to see which one is
-                conflicting this script. Isolating the Object might help to see if it's a Z-Fighting case.
+            - I have found one case where it was needed due to overlapping faces between Objects. (Z-Fighting)
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
@@ -52,7 +50,7 @@ Mesh/es.
     7 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
         unable to recover, for whatever reason, before adding the script into your Unity project.
 
-    7 - Enjoy!
+    8 - Enjoy!
 
 # Why this is useful
 
