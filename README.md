@@ -27,25 +27,19 @@ Mesh/es.
             applied to all non-grouped-tiles by default. 
             - Again if you create more Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
-
-    3 - I have found some cases where Unity importer doesn't load well the number of vertices that
-        Crocotile3D writes to the .obj file. Sometimes it adds extra vertices, no idea why, to the
-        resulting Mesh/es.
-            - If you get a "Mesh.colors is out of bounds..." error try disabling the Merge Vertices
-            checkbox of Crocotile3D .obj export settings and see if it works.
             
-    4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
+    3 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - Gamma is the default Color Space on new projects by Unity.
             - There might be a workaround in ModelImporter settings for Linear space users, 
                 check documentation.
             - Other solution might involve to change how the Colors are parsed in this script. 
             
-    5 - The script requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings
+    4 - The script requires PreserveHierarchy, OptimizeMesh and WeldVertices from ModelImporter settings
         set to false so Unity doesn't mismatch with the .obj file vertex order. 
             - This script does this automatically for you on the OnPreprocessModel () function.
         
-    6 - The script cannot distinguish .obj files created with Crocotile3D than other
+    5 - The script cannot distinguish .obj files created with Crocotile3D than other
         modeling softwares. If you have .obj files created from other
         modeling software imported or modified, THIS SCRIPT WILL PROBABLY FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
@@ -53,12 +47,12 @@ Mesh/es.
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
             for that "c3d" in code.        
         
-    7 - Performance on multiple .obj importing or modifications has not been extensively tested.
+    6 - Performance on multiple .obj importing or modifications has not been extensively tested.
     
-    8 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
+    7 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
         unable to recover, for whatever reason, before adding the script into your Unity project.
 
-    9 - Enjoy!
+    8 - Enjoy!
 
 # Why this is useful
 
