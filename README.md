@@ -12,7 +12,7 @@ Place the script somewhere inside your Asset folder of your Unity project and ne
 you import or modify an .obj file it will load the Vertex Colors automatically into the resulting 
 Mesh/es.
 
-# Considerations and Limitations:
+# Considerations and Limitations
 
     1 - Avoid creating equally named Objects in the Crocotile3D Object Hierarchy (Scene tab). 
         - Including casing variations! (Example, EXAMPLE, eXaMpLe, etc...)
