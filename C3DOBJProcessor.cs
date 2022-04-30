@@ -36,10 +36,15 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
         modelImporter.preserveHierarchy = false;
         modelImporter.optimizeMesh = false;
         modelImporter.weldVertices = false;
+        modelImporter.importNormals = ModelImporterNormals.None;
         /* 
             You can add extra modelImporter settings here. 
-            Bear in mind Preserve Hierarchy, Optimize Mesh, and Weld Vertices
-            need to be false for vertex colors to be loaded correctly.
+            Bear in mind that:
+            - Preserve Hierarchy = false
+            - Optimize Mesh = false
+            - Weld Vertices = false
+            - Import Normals = None
+            need to be for vertex colors to be loaded correctly.
         */
     }
 
@@ -133,7 +138,9 @@ public sealed class C3DOBJProcessor : AssetPostprocessor
                 currFileLine++;
             }
             currentMesh.SetColors (vertexColors);
-            vertexColors.Clear (); 
+            currentMesh.RecalculateNormals ();
+            currentMesh.RecalculateTangents ();
+            vertexColors.Clear ();
         }
 
         if (!errorFound) Debug.Log (gameObject.name + ".obj Vertex Colors loaded successfully!");
