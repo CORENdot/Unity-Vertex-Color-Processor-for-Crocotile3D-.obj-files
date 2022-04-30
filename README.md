@@ -30,7 +30,6 @@ Mesh/es.
             
     3 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
-            - Gamma is the default Color Space on new projects by Unity.
             - If you are a Linear Space user you will have to find why the result is different,
             maybe a gamma correction is needed after parsing the Vertex Colors in the script.
             
