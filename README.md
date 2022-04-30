@@ -42,7 +42,7 @@ Mesh/es.
                 Colors are correctly loaded automatically.
  
     5 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
-            - Imported or modified .obj files created from other modeling softwares MIGHT MAKE THE SCRIPT FAIL!
+            - Imported or modified .obj files created on other modeling softwares CAN MAKE THE SCRIPT FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
             affect each .obj files of your project. 
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
