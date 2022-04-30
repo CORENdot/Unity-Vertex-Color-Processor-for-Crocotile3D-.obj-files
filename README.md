@@ -28,9 +28,11 @@ Mesh/es.
             - Again if you create more Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
 
-    3 - I have found some cases where Merge Vertices .obj setting in Crocotile3D export conflicts 
-        the quantity of vertices that Unity imports into the resulting mesh/es. 
-            - If you get a "Mesh.colors is out of bounds..." error disable that checkbox and see if it works.
+    3 - I have found some cases where Unity importer doesn't load well the number of vertices that
+        Crocotile3D writes to the .obj file. Sometimes it adds extra vertices, no idea why, to the
+        resulting Mesh/es.
+            - If you get a "Mesh.colors is out of bounds..." error try disabling the Merge Vertices
+            checkbox of Crocotile3D .obj export settings and see if it works.
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
