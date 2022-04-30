@@ -28,21 +28,28 @@ Mesh/es.
             - Again if you create Objects called "Scene" they will get merged with the 
             non-grouped-tiles into a single Mesh by Unity.
             
-    3 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
+    3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds..." try
+        exporting the .obj file with Merge Vertices disabled in the Crocotile3D .obj export settings and 
+        see if it works.
+            - These are cases i have yet to find out if i can do anything about them to make it work.
+            - Another thing you can do is to export enabling Object by Object to see which one is
+                conflicting this script. Isolating the Object might help to improve the script further.
+            
+    4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
             - If you are a Linear Space user you will have to find why the result is different,
             maybe a gamma correction is needed after parsing the Vertex Colors in the script.
             
-    4 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
+    5 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
             - Imported or modified .obj files created on other modeling softwares CAN MAKE THE SCRIPT FAIL!
             - Feel free to extend the code and add conditions that will prevent the script to 
             affect each .obj files of your project. 
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
             for that "c3d" in code.        
         
-    5 - Performance on multiple .obj importing or modifications has not been extensively tested.
+    6 - Performance on multiple .obj importing or modifications has not been extensively tested.
     
-    6 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
+    7 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
         unable to recover, for whatever reason, before adding the script into your Unity project.
 
     7 - Enjoy!
