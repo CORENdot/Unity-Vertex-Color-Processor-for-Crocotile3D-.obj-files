@@ -14,6 +14,8 @@ using UnityEngine;
     Read all Considerations and Limitations carefully from GitHub readme if you get a case
     where it doesn't work properly:
     https://github.com/CORENdot/Unity-Vertex-Color-Processor-for-Crocotile3D-.obj-files
+    
+    Intended for Unity 2018.4 LTS version.
 
     - CORENdot
 */
