@@ -15,6 +15,8 @@ using UnityEngine;
     where it doesn't work properly:
     https://github.com/CORENdot/Unity-Vertex-Color-Processor-for-Crocotile3D-.obj-files
 
+    Intended for Unity 2019.4 LTS version.
+
     - CORENdot
 */
 public sealed class C3DOBJProcessor : AssetPostprocessor
