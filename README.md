@@ -71,8 +71,9 @@ With this script you will have some quality of life improvements by using .obj f
 
 # Last tested with
 
-- Unity 2018.4.36f1 LTS, newer versions might need code changes due to deprecations.
-- .obj files created with Crocotile3D 1.8.5
+- Unity 2018.4.36f1 LTS
+- Unity 2019.4.39f1 LTS
+- .obj files created with Crocotile3D 1.8.5 - 1.8.7
 
 # Ending
 
