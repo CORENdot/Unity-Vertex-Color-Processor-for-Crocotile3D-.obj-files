@@ -1,4 +1,4 @@
-Shader "Alpha Vertex Colors Unlit" 
+Shader "Alpha Vertex Colors Unlit"
 {
     Properties 
     {
