@@ -1,6 +1,6 @@
 # Unity Vertex Color Processor for Crocotile3D .obj files
 
-Original intention is to extend Unity importer to support Vertex Colors
+Original intention is to extend Unity 3D model importer to support Vertex Colors
 from .obj files created with Crocotile3D perfectly.
 
 It also adds other quality of life improvements that you can find described
@@ -25,8 +25,8 @@ Mesh/es.
         of the Object Hierarchy in Crocotile3D (Scene tab).
             - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's
             applied to all non-grouped-tiles by default. 
-            - Again if you create Objects called "Scene" they will get merged with the 
-            non-grouped-tiles into a single Mesh by Unity.
+                - Again, bear in mind that if you create Objects called "Scene" they will get merged with 
+                the non-grouped-tiles into a single Mesh by Unity.
             
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds..." try
         exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
@@ -35,8 +35,9 @@ Mesh/es.
             
     4 - If the Unity project doesn't have Color Space set to Gamma in the Player Settings 
         vertex colors will result different than Crocotile 3D. (More subtle)
-            - If you are a Linear Space user you will have to find why the result is different,
-            maybe a gamma correction is needed after parsing the Vertex Colors in the script.
+            - If you want to match Crocotile3D Vertex Colors with Unity in Color Space Linear mode you
+            will have to modify the script, maybe a gamma correction is needed after parsing
+            the Vertex Colors.
             
     5 - The script cannot distinguish .obj files created with Crocotile3D than other modeling softwares. 
             - Imported or modified .obj files created on other modeling softwares CAN MAKE THE SCRIPT FAIL!
@@ -44,23 +45,22 @@ Mesh/es.
             affect each .obj files of your project. 
             - Example: Name your Croco .obj files as filename_c3d.obj and add a condition check 
             for that "c3d" in code.        
-        
-    6 - Performance on multiple .obj importing or modifications has not been extensively tested.
     
-    7 - Use this AT YOUR OWN RISK! IT'S EXPERIMENTAL! My advice is to backup any .obj that you are 
-        unable to recover, for whatever reason, before adding the script into your Unity project.
+    6 - Be aware, THIS SCRIPT IS EXPERIMENTAL! My advice is to backup any .obj that you are 
+        unable to recover, for whatever reason, before adding the script into your Unity project. Performance
+        on multiple .obj import and modifications has not extensively tested either.
 
-    8 - Enjoy!
+    7 - Enjoy!
 
 # Why this is useful
 
 It is not possible for Unity to load Vertex Colors from .obj files created with Crocotile3D by default, they only load correctly from .dae files.
 
-This brings the problem that by using .dae the Use Groups functionality of .obj is lost and all Objects end merged together in the same Mesh unless individually exported as .dae. 
+This rises the problem that by using .dae the Use Groups functionality of .obj export settings in Crocotile3D is lost and all Objects end merged together in the same Mesh (Scene) by the Unity Importer. 
 
-Which in big Crocotile3D projects might become very time consuming.
+The only workaround is to individually export each Object of the Crocotile3D project as .dae, which in big Crocotile3D projects is very time consuming.
 
-With this script you will have some quality of life improvements by using .obj files: 
+With this script you will have some quality of life improvements by using .obj files:
 
 - Vertex Colors correctly loaded from the .obj file into Unity resulting Mesh/es.
 - Each Object as an individual Mesh or merged together at will based on:
@@ -73,7 +73,7 @@ With this script you will have some quality of life improvements by using .obj f
 
 - Unity 2018.4.36f1 LTS
 - Unity 2019.4.39f1 LTS
-- .obj files created with Crocotile3D 1.8.5 - 1.8.7
+- .obj files created with Crocotile3D 1.8.5 - 1.8.8
 
 # Ending
 
