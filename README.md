@@ -66,7 +66,7 @@ With this script you will have some quality of life improvements by using .obj f
 - Each Object as an individual Mesh or merged together at will based on:
     - Use Groups checkbox of .obj export settings in Crocotile3D enabled or disabled.
     - Multiple Objects named equally in the Object Hierarchy of Crocotile3D. (Scene tab)
-- Meshes having "filename_Scene" naming for better inspector searching within Unity Editor.
+- Default Object Meshes having "filename_Scene" naming for better inspector searching within Unity Editor.
 - Matching Vertex Colors from Crocotile3D to Unity in Gamma color space.
 
 # Last tested with
