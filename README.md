@@ -23,14 +23,15 @@ automatically into the resulting Mesh/es.
 
     2 - Avoid creating Objects named "Scene" in the Crocotile3D Object Hierarchy. (Scene tab)
             - Including casing variations! (Scene, SCENE, sCeNe, etc...)
-            - If for some reason you need to have them, place them at TOP of the Object Hierarchy to make it work.
+            - If for some reason you need to have them, place them at TOP of the Object Hierarchy to make it 
+            work.
             - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's
             applied to all non-grouped-tiles by default. 
                 - Again, bear in mind that if you create Objects called "Scene" they will get merged with 
                 the non-grouped-tiles into a single Mesh by the Unity importer.
             
-    3 - If you made sure the above points are avoided and still get an error like "Mesh.colors is out of bounds..." try
-        exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
+    3 - If you made sure the above points are avoided and get the error "Mesh.colors is out of bounds..."
+        try exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
         see if it works.
             - This seems to be due to specific cases where Unity resulting vertices differ from Crocotile3D.
             
@@ -50,8 +51,8 @@ automatically into the resulting Mesh/es.
     6 - Be aware, THIS SCRIPT IS EXPERIMENTAL!
             - I'm making a game in Unity 2019.4 LTS with only .obj files made with Crocotile3D. As long all 
             considerations and limitations are followed the script has been working fine on my end.
-            - My advice is to backup any .obj that you are unable to recover, for whatever reason, before adding
-            the script into your Unity project.
+            - My advice is to backup any .obj that you are unable to recover, for whatever reason, before 
+            adding the script into your Unity project.
             - Performance on multiple .obj import and modifications has not extensively tested either.
 
     7 - Enjoy!
