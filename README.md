@@ -9,8 +9,8 @@ below in the Why this is useful section.
 # How it works
 
 Place the script somewhere inside your Asset folder of your Unity project and next time
-you import or modify an .obj file it will load the Vertex Colors automatically into the resulting 
-Mesh/es.
+you import or modify an .obj file within the Unity editor it will load the Vertex Colors 
+automatically into the resulting Mesh/es.
 
 # Considerations and Limitations
 
@@ -19,14 +19,14 @@ Mesh/es.
         - Only Object names matter, Instances and Layers names can be repeated.
         - If for some reason you need to have Objects named equally put them next to each other
             in the hierarchy to make it work.
-            -   Yet bear in mind that Unity Importer merges Objects called equally into a single Mesh!
+            -   Yet bear in mind that Unity importer merges Objects called equally into a single Mesh!
 
     2 - If you have created Object/s called "Scene" or it's possible casing variations place them at top
         of the Object Hierarchy in Crocotile3D (Scene tab).
             - This is a special case as "Scene" is the default existing Object in Crocotile3D, it get's
             applied to all non-grouped-tiles by default. 
                 - Again, bear in mind that if you create Objects called "Scene" they will get merged with 
-                the non-grouped-tiles into a single Mesh by Unity.
+                the non-grouped-tiles into a single Mesh by Unity importer.
             
     3 - If you have done the above steps and still get an error like "Mesh.colors is out of bounds..." try
         exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
