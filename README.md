@@ -30,7 +30,7 @@ automatically into the resulting Mesh/es.
                 - Again, bear in mind that if you create Objects called "Scene" they will get merged with 
                 the non-grouped-tiles into a single Mesh by the Unity importer.
             
-    3 - If you made sure the above points are avoided and still get the error "Mesh.colors is out of bounds..."
+    3 - If you made sure above points are avoided and still get the error "Mesh.colors is out of bounds..."
         try exporting the .obj file with Merge Vertices disabled in the Crocotile3D export settings and 
         see if it works.
             - This seems to be due to specific cases where Unity resulting vertices differ from Crocotile3D.
